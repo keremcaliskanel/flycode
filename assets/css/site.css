@@ -1,0 +1,147 @@
+.show_row [class^=col-],
+.show_row [class^=col] {
+	background-color: rgba(86,61,124,.15);
+	border:1px solid;
+}
+
+
+/* variable definitions */
+:root {
+	--font_poppins: 'Poppins', sans-serif;
+	
+	--white: 	rgba(255,255,255,1);
+	--white_50: rgba(255,255,255,0.5);
+	--white_40: rgba(255,255,255,0.4);
+	--white_30: rgba(255,255,255,0.3);
+	
+	--black:	rgba(0,0,0,1);
+	--black_50: rgba(0,0,0,0.5);
+	--black_40: rgba(0,0,0,0.4);
+	--black_30: rgba(0,0,0,0.3);
+
+	--black_flycode: 	#060618;
+	--green_flycode: 	#20FFA3;
+	--blue_flycode: 	#0000FE;
+	--blue_dark_flycode: 	#0000d6;
+	--body_text_color: 	#4C4C4C;
+	--form_placeholder_color: #CCCCCC;
+	--bs-body-color: #CCCCCC;
+
+
+	--font_weight_300: 	300;
+	--font_weight_400: 	400;
+	--font_weight_500: 	500;
+	--font_weight_600: 	600;
+
+	--font_size_12: 12px;
+	--font_size_13: 13px;
+	--font_size_14: 14px;
+	--font_size_15: 15px;
+	--font_size_16: 16px;
+
+	--transition: .3s;
+
+	--bs-border-radius: 7px;
+	--bs-border-radius-lg: 7px;
+}
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--blue_flycode);
+    --bs-btn-border-color: var(--blue_flycode);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--blue_dark_flycode);
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--blue_flycode);
+    --bs-btn-disabled-border-color: var(--blue_flycode);
+    font-weight: var(--font_weight_600);
+    font-size: var(--font_size_15);
+    letter-spacing: 0.6px;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: var(--font_poppins);
+}
+
+html,
+body {
+  height: 100%;
+  font-size: var(--font_size_16);
+  color: var(--body_text_color);
+}
+
+a {
+	text-decoration: none;
+
+}
+
+
+
+body.login{
+	background-color: var(--black_flycode);
+	color: var(--white);
+}
+body.login:after{
+	display: block;
+	content: '';
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	width: 755.1px;
+	height: 385.17px;
+	background-image: url('../../images/amblem.svg');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	z-index: -1;
+}
+body.login .container{
+	height: calc(100% - 40px);
+}
+body.login .form-control{
+	font-weight: var(--font_weight_600);
+	letter-spacing: 0.6px;
+}
+body.login .form-text{
+	margin-top: 0;
+    font-size: var(--font_size_12);
+    color: var(--white);
+}
+body.login .form-text a{
+    color: var(--green_flycode);
+}
+
+.form-control:focus {
+    border-color: var(--green_flycode);
+    box-shadow: none;
+}
+.form-control::placeholder {
+	font-weight: var(--font_weight_600);
+	color: var(--form_placeholder_color);
+	opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+	color: var(--form_placeholder_color);
+}
+.form-control::-ms-input-placeholder {
+	color: var(--form_placeholder_color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
