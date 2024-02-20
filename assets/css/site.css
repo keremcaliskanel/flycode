@@ -3,9 +3,7 @@
 	background-color: rgba(86,61,124,.15);
 	border:1px solid;
 }
-
-
-/* variable definitions */
+/* ================= Variable Definitions ================= */
 :root {
 	--font_poppins: 'Poppins', sans-serif;
 	
@@ -24,6 +22,7 @@
 	--blue_flycode: 	#0000FE;
 	--blue_dark_flycode: 	#0000d6;
 	--body_text_color: 	#4C4C4C;
+	--body_color: #F8FAFC;
 	--form_placeholder_color: #CCCCCC;
 	--bs-body-color: #CCCCCC;
 
@@ -63,11 +62,17 @@
     font-size: var(--font_size_15);
     letter-spacing: 0.6px;
 }
+/* ================= Variable Definitions ================= */
 
+/* ================= Globals ================= */
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: var(--font_poppins);
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 html,
@@ -75,48 +80,16 @@ body {
   height: 100%;
   font-size: var(--font_size_16);
   color: var(--body_text_color);
+  background-color: var(--body_color);
 }
 
 a {
 	text-decoration: none;
+}
+/* ================= Globals ================= */
 
-}
 
-
-
-body.login{
-	background-color: var(--black_flycode);
-	color: var(--white);
-}
-body.login:after{
-	display: block;
-	content: '';
-	position: absolute;
-	right: 50px;
-	bottom: 50px;
-	width: 755.1px;
-	height: 385.17px;
-	background-image: url('../../images/amblem.svg');
-	background-repeat: no-repeat;
-	background-position: right bottom;
-	z-index: -1;
-}
-body.login .container{
-	height: calc(100% - 40px);
-}
-body.login .form-control{
-	font-weight: var(--font_weight_600);
-	letter-spacing: 0.6px;
-}
-body.login .form-text{
-	margin-top: 0;
-    font-size: var(--font_size_12);
-    color: var(--white);
-}
-body.login .form-text a{
-    color: var(--green_flycode);
-}
-
+/* ================= General Form Style ================= */
 .form-control:focus {
     border-color: var(--green_flycode);
     box-shadow: none;
@@ -132,6 +105,51 @@ body.login .form-text a{
 .form-control::-ms-input-placeholder {
 	color: var(--form_placeholder_color);
 }
+/* ================= General Form Style ================= */
+
+
+
+/* ================= Login Form ================= */
+body.login{
+	background-color: var(--black_flycode);
+	color: var(--white);
+}
+body.login:after{
+	display: block;
+	content: '';
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	width: 755.1px;
+	height: 385.17px;
+	background-image: url('../../images/amblem.svg');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	z-index: 0;
+}
+body.login .container{
+	height: calc(100% - 40px);
+	position: relative;
+	z-index: 1;
+}
+body.login .form-control{
+	font-weight: var(--font_weight_600);
+	letter-spacing: 0.6px;
+	color: var(--black);
+}
+body.login .form-text{
+	margin-top: 0;
+    font-size: var(--font_size_12);
+    color: var(--white);
+}
+body.login .form-text a{
+    color: var(--green_flycode);
+}
+/* ================= Login Form ================= */
+
+
+
+
 
 
 
