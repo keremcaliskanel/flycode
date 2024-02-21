@@ -37,6 +37,7 @@
 	--font_size_14: 14px;
 	--font_size_15: 15px;
 	--font_size_16: 16px;
+	--font_size_17: 17px;
 
 	--transition: .3s;
 
@@ -44,23 +45,23 @@
 	--bs-border-radius-lg: 7px;
 }
 .btn-primary {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: var(--blue_flycode);
-    --bs-btn-border-color: var(--blue_flycode);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--blue_dark_flycode);
-    --bs-btn-hover-border-color: #0a58ca;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #0a58ca;
-    --bs-btn-active-border-color: #0a53be;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: var(--blue_flycode);
-    --bs-btn-disabled-border-color: var(--blue_flycode);
-    font-weight: var(--font_weight_600);
-    font-size: var(--font_size_15);
-    letter-spacing: 0.6px;
+	--bs-btn-color: #fff;
+	--bs-btn-bg: var(--blue_flycode);
+	--bs-btn-border-color: var(--blue_flycode);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: var(--blue_dark_flycode);
+	--bs-btn-hover-border-color: #0a58ca;
+	--bs-btn-focus-shadow-rgb: 49,132,253;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #0a58ca;
+	--bs-btn-active-border-color: #0a53be;
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: var(--blue_flycode);
+	--bs-btn-disabled-border-color: var(--blue_flycode);
+	font-weight: var(--font_weight_600);
+	font-size: var(--font_size_15);
+	letter-spacing: 0.6px;
 }
 /* ================= Variable Definitions ================= */
 
@@ -70,17 +71,17 @@
 	-moz-osx-font-smoothing: grayscale;
 	font-family: var(--font_poppins);
 	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 
 html,
 body {
-  height: 100%;
-  font-size: var(--font_size_16);
-  color: var(--body_text_color);
-  background-color: var(--body_color);
+	height: 100%;
+	font-size: var(--font_size_16);
+	color: var(--body_text_color);
+	background-color: var(--body_color);
 }
 
 a {
@@ -91,8 +92,8 @@ a {
 
 /* ================= General Form Style ================= */
 .form-control:focus {
-    border-color: var(--green_flycode);
-    box-shadow: none;
+	border-color: var(--green_flycode);
+	box-shadow: none;
 }
 .form-control::placeholder {
 	font-weight: var(--font_weight_600);
@@ -139,19 +140,174 @@ body.login .form-control{
 }
 body.login .form-text{
 	margin-top: 0;
-    font-size: var(--font_size_12);
-    color: var(--white);
+	font-size: var(--font_size_12);
+	color: var(--white);
 }
 body.login .form-text a{
-    color: var(--green_flycode);
+	color: var(--green_flycode);
 }
 /* ================= Login Form ================= */
 
 
+.wrapper{
+	display: flex;
+}
+.main{
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	transition: all 0.35s ease-in-out;
+}
+#sidebar{
+	width: 394px;
+	min-width: 115.5px;
+	z-index: 1000;
+	transition: all .25s ease-in-out;
+	background-color: var(--black_flycode);
+	display: flex;
+	flex-direction: column;
+	padding: 0px 17px;
+}
+
+#sidebar .sidebar_header{
+	height: 133px;
+}
+#sidebar .sidebar-logo{
+	display: flex;
+	align-items: flex-start;
+}
+#sidebar .toggle-btn{
+	border:1px solid var(--white);
+	width: 25px;
+	height: 25px;
+	border-radius: 3px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+}
+
+#sidebar .sidebar-nav {
+    padding: 0px;
+    flex: 1 1 auto;
+    overflow: auto;
+    height: 100px;
+    position: relative;
+}
+#sidebar a.sidebar-link {
+    font-size: var(--font_size_17);
+    font-weight: var(--font_weight_600);
+    letter-spacing: 0.68px;
+    line-height: 24px;
+    padding: 14px 0px 14px 33px;
+    color: var(--white);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    transition: all .25s ease-in-out;
+    position: relative;
+}
+#sidebar a.sidebar-link .icon {
+    max-width: 14px;
+    max-height: 14px;
+    margin-right: 10px;
+}
+
+#sidebar a.sidebar-link:hover,
+#sidebar a.sidebar-link.active{
+    background-color: var(--blue_flycode);
+}
+#sidebar .sidebar-item {
+	position: relative;
+}
+#sidebar .sidebar-dropdown .sidebar-item a.sidebar-link{
+	font-weight: var(--font_weight_300);
+	padding-left: 60px;
+}
+#sidebar .sidebar-dropdown .sidebar-item .sidebar-item a.sidebar-link{
+	padding-left: 80px;
+}
+
+#sidebar .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+#sidebar.collapse {
+    width: 115px;
+    min-width: 115px;
+}
+#sidebar.collapse .toggle-btn,
+#sidebar.collapse .sidebar-link[data-bs-toggle="collapse"]::after,
+#sidebar.collapse .sidebar-logo .logo-name,
+#sidebar.collapse .sidebar-item .sidebar-dropdown,
+#sidebar.collapse a.sidebar-link span {
+    display: none;
+}
+#sidebar.collapse .sidebar-logo .logo-amblem img{
+	width: 80px;
+	margin-right: 0px !important;
+}
+
+/*#sidebar.collapse .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    background-color: var(--black_flycode);
+    padding: 5px;
+    min-width: fit-content;
+    display: none;
+    border-radius: 0 7px 7px 0;
+}
+#sidebar.collapse .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    width: 100%;
+    opacity: 1;
+    background-color: red;
+}
+
+#sidebar.collapse .sidebar-item .sidebar-item .sidebar-dropdown {
+    position: relative;
+    top: 0;
+    left: 00px;
+    background-color: black;
+    padding: 5px;
+    min-width: fit-content;
+    display: none;
+    border-radius: 0;
+}
+#sidebar.collapse .sidebar-item .sidebar-item:hover .has-dropdown-2+.sidebar-dropdown {
+    display: block;
+    width: 100%;
+    opacity: 1;
+    background-color: blue;
+}
+#sidebar.collapse .sidebar-nav {
+    overflow: visible;
+    height: auto;
+    width: 81px;
+}
+*/
 
 
-
-
+/*#sidebar.collapse .sidebar-dropdown .sidebar-item a.sidebar-link{
+	padding-left: 14px;
+	padding-right: 14px;
+}*/
 
 
 
