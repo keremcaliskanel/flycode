@@ -1,0 +1,21 @@
+/*------------ XL ------------*/
+@media (max-width: 1199px){
+
+}
+
+/*------------ LG ------------*/
+@media (max-width: 991px){
+	#header, #main{
+		margin-left: 115px;
+	}
+}
+
+/*------------ MD ------------*/
+@media (max-width: 767px){
+
+}
+
+/*------------ SM ------------*/
+@media (max-width: 575px){
+
+}
