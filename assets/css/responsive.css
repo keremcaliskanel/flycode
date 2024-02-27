@@ -1,6 +1,23 @@
+/*------------ XXL ------------*/
+@media (max-width: 1374px){
+	.user_card .card-body{
+		width: 100px !important;
+	}
+}
+@media (max-width: 1257px){
+	.user_card .col-auto:last-child{
+		display: none !important;
+	}
+}
+
 /*------------ XL ------------*/
 @media (max-width: 1199px){
-
+	.user_card .col-auto:last-child{
+		display: block !important;
+	}
+	.user_card .card-body{
+		width: auto !important;
+	}
 }
 
 /*------------ LG ------------*/
@@ -12,7 +29,10 @@
 
 /*------------ MD ------------*/
 @media (max-width: 767px){
-
+	#header{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 /*------------ SM ------------*/
