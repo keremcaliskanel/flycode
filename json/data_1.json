@@ -1,0 +1,33 @@
+[
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_1.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Ahmet Çiçek\"> Ayşe Yıldız</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  },
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_2.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Mehmet Aydın\"> Mehmet Aydın</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  },
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_3.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Ali Taş\"> Ali Taş</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  },
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_4.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Cem Şimşek\"> Cem Şimşek</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  },
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_5.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Mustafa Ak\"> Mustafa Ak</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  },
+  {
+    "personel": "<a href=\"#\"><img src=\"./images/users/user_6.jpg\" width=\"24\" class=\"rounded-circle user_img\" alt=\"Merve Şahin\"> Merve Şahin</a>",
+    "ortalama_giris": "09:01",
+    "ortalama_cikis": "17:53"
+  }
+  
+]

@@ -18,27 +18,39 @@
   <meta name="theme-color" content="#20FFA3">
   <!-- ========== Favicons - End ============  -->
 
-
   <!-- ========== Her Sayfada Olması Gereken CSS'LER - Start ============  -->
+  <link href="./assets/fonts/poppins/style.css" rel="stylesheet">
   <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="./assets/perfect_scrollbar/perfect-scrollbar.css" rel="stylesheet">
+
+  <!-- ========== FontAwesome Icon Library - Start ============  -->
+  <link href="./assets/fontawesome/all.min.css" rel="stylesheet">
+
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak CSS'LER - Start ============  -->
+  <link href="./assets/date_range_picker/daterangepicker.min.css" rel="stylesheet">
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak CSS'LER - End ============  -->
+
+  <!-- ========== Nice Select CSS - Start ============  -->
+  <link href="./assets/nice_select/nice-select.css" rel="stylesheet">
+  <!-- ========== Nice Select CSS - End ============  -->
+
+  <!-- ========== Bootstrap CSS - Start ============  -->
+  <link href="./assets/bootstrap_table/bootstrap-table.min.css" rel="stylesheet">
+  <!-- ========== Bootstrap CSS - End ============  -->
+
+  <link href="./assets/css/variable.css" rel="stylesheet">
   <link href="./assets/css/site.css" rel="stylesheet">
   <link href="./assets/css/responsive.css" rel="stylesheet">
   <!-- ========== Her Sayfada Olması Gereken CSS'LER - End ============  -->
-
 </head>
 <body>
-
+  <!-- ========== Wrapper - Start ============  -->
   <div id="wrapper">
+    <!-- ========== Sidebar - Start ============  -->
     <aside id="sidebar" class="">
+      <!-- ========== Sidebar Header - Start ============  -->
       <div class="d-flex justify-content-center flex-row-reverse align-items-center position-relative sidebar_header">
         <!-- ========== Toggle Button - Start ============  -->
-        <a href="#" class="toggle-btn">
-          <img src="./images/icons/left_arrow.svg">
-        </a>
+        <a href="#" class="toggle-btn"><img src="./images/icons/left_arrow.svg"></a>
         <!-- ========== Toggle Button - End ============  -->
         <!-- ========== Logo - Start ============  -->
         <div class="sidebar-logo">
@@ -47,6 +59,7 @@
         </div>
         <!-- ========== Logo - End ============  -->
       </div>
+      <!-- ========== Sidebar Header - End ============  -->
 
       <!-- ========== Sidebar Menu - Start ============  -->
       <ul class="sidebar-nav list-unstyled">
@@ -203,20 +216,557 @@
       </div>
       <!-- ========== Sidebar Footer - End ============  -->
     </aside>
+    <!-- ========== Sidebar - End ============  -->
 
-    <header id="header">HEADER</header>
+    <!-- ========== Header - Start ============  -->
+    <header id="header">
 
+      <div class="row g-0 d-flex justify-content-between align-items-center">
+        
+        <!-- ========== User Info - Start ============  -->
+        <div class="col-auto">
+          <div class="card user_card">
+            <div class="row align-items-center g-0">
+              <div class="col-auto me-2">
+                <a href="#"><img src="./images/users/user_1.jpg" class="rounded-circle user_img" alt="Ahmet Çiçek"></a>
+              </div>
+              <div class="col-auto">
+                <div class="card-body d-none d-sm-block">
+                  <h5 class="card-title text-truncate">Ahmet Çiçek</h5>
+                  <p class="card-text text-truncate">İnsan Kaynakları Sorumlusu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========== User Info - End ============  -->
+        
+        <div id="header_filter_mobile" class="col-auto d-none d-xl-block">
+          <!-- ========== Mobile Filter Button - Start ============  -->
+          <div class="offcanvas-header d-block d-xl-none">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <!-- ========== Mobile Filter Button - End ============  -->
+          
+          <!-- ========== Filter Dropdown - Start ============  -->
+          <div class="dropdown float-start me-2">
+            <a class="btn btn_fly dropdown-toggle fly_select text-truncate" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,0">
+              <img src="./images/icons/globe.svg"> <span class="text-truncate w-50">Manuel Çalışma Saatleri</span>
+              <input type="hidden" name="hdn_post" value="">
+            </a>
+            <ul class="dropdown-menu">
+              <li data-value="1"><a class="dropdown-item" href="#">Manuel Geçiş Saatleri</a></li>
+              <li data-value="2"><a class="dropdown-item active" href="#">Manuel Çalışma Saatleri</a></li>
+              <li data-value="3"><a class="dropdown-item" href="#">Hepsi</a></li>
+            </ul>
+          </div>
+          <!-- ========== Filter Dropdown - End ============  -->
+
+          <!-- ========== Filter Buttongroup - Start ============  -->
+          <div class="btn-group">
+            <a href="#" class="btn btn-outline-success active" aria-current="page">Bugün</a>
+            <a href="#" class="btn btn-outline-success">Dün</a>
+            <a href="#" class="btn btn-outline-success">Bu Hafta</a>
+            <a href="#" class="btn btn-outline-success">Bu Ay</a>
+            <a href="#" class="btn btn-outline-success">Bu Yıl</a>
+            <div class="btn-group" role="group">
+              <a href="#" class="btn btn-outline-success dropdown-toggle dropdown_date_range" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,0"><img src="./images/icons/calendar.svg"> Tarih Seç</a>
+              <div class="dropdown-menu p-0 border-0">
+                <!-- Tarihlerin Takvimde Seçili Gelmesi İçin "data-value" ve "value" attr'lerin Dolu Olması Gerekli -->
+                <input type="hidden" name="startDate" data-value="" value="">
+                <input type="hidden" name="endDate" data-value="" value="">
+                <div id="date-range-container"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ========== Filter Buttongroup - End ============  -->
+        </div>
+
+        <div class="col-auto">
+          <!-- Mobile Filter Button -->
+          <button id="header_filter_mobile_menu" class="btn btn-secondary rounded-circle p-0 me-3 d-inline-block d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#header_filter_mobile" aria-controls="header_filter_mobile"><i class="far fa-bars"></i></button>
+          <!-- Mobile Filter Button -->
+
+          <!-- Filter Offcanvas -->
+          <button class="btn btn-secondary rounded-circle p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter.svg"></button>
+          <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasFilter">
+            <div class="offcanvas-header">
+              <button class="btn btn-secondary rounded-circle p-0 active me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter_blue.svg"></button>
+              <button class="btn btn-secondary rounded-circle p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification.svg"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Filter Form -->
+              <form name="frm_filter" id="frm_filter" action="" method="post" class="h-100">
+                <div class="d-flex align-items-start flex-column h-100">
+
+                  <!-- Company Name TextBox -->
+                  <div class="w-100 mb-3">
+                    <input type="text" class="form-control form-control-lg search_box" id="companyName" name="companyName" placeholder="Şirket Adı">
+                  </div>
+                  <!-- Company Name TextBox -->
+
+                  <!-- Nice Select -->
+                  <div class="w-100 mb-3">
+                    <select name="slcUnit" id="slcUnit" class="wide nice_select_dark" aria-label="Birim">
+                      <option data-display="Birim">Birim</option>
+                      <option value="1">Head Office</option>
+                      <option value="2">İdari</option>
+                      <option value="3">Sales Office</option>
+                      <option value="4">Taşeron</option>
+                      <option value="5">Üretim ve Lojistik</option>
+                    </select>
+                  </div>
+                  <!-- Nice Select -->
+
+                  <!-- Table -->
+                  <div class="w-100 h-100 mb-auto table_container dark need_scroll">
+                    <table id="table1" class="table table-dark table-hover table-sm">
+                      <thead>
+                        <tr>
+                          <th>Sicil</th>
+                          <th>Ad Soyad</th>
+                          <th>Birim</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_1">
+                              <label class="form-check-label" for="chk_1">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_2">
+                              <label class="form-check-label" for="chk_2">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_3">
+                              <label class="form-check-label" for="chk_3">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_4">
+                              <label class="form-check-label" for="chk_4">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_5">
+                              <label class="form-check-label" for="chk_5">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_6">
+                              <label class="form-check-label" for="chk_6">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_7">
+                              <label class="form-check-label" for="chk_7">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_8">
+                              <label class="form-check-label" for="chk_8">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_9">
+                              <label class="form-check-label" for="chk_9">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_10">
+                              <label class="form-check-label" for="chk_10">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Table -->
+
+                  <!-- Buttons -->
+                  <div class="w-100 mt-3 d-flex align-items-center flex-column">
+                    <button type="button" class="btn btn-light w-50 mb-3">Uygula</button>
+                    <button type="button" class="btn btn-light w-50">Temizle</button>
+                  </div>
+                  <!-- Buttons -->
+
+                </div>
+              </form>
+              <!-- Filter Form -->
+            </div>
+          </div>
+          <!-- Filter Offcanvas -->
+
+          <!-- Notification Offcanvas -->
+          <button class="btn btn-secondary rounded-circle p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification.svg"></button>
+          <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasNotification">
+            <div class="offcanvas-header">
+              <button class="btn btn-secondary rounded-circle p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter.svg"></button>
+              <button class="btn btn-secondary rounded-circle p-0 active" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification_blue.svg"></button>
+            </div>
+            <div class="offcanvas-body need_scroll">
+              <div class="d-flex align-items-start flex-column h-100">
+                <div class="mb-auto w-100 h-100">
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3 readed">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Notification Offcanvas -->
+        </div>
+      </div>
+
+    </header>
+    <!-- ========== Header - End ============  -->
+    <!-- ========== Main - Start ============  -->
     <main id="main">
-      MAIN START
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      MAIN END
+      <div class="container-fluid p-0">
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card fly_card">
+              <div class="card-body">
+                <div class="d-flex">
+                  <h4 class="card-title">Genel Özet</h4>
+                  <div class="dropdown ms-3 fly_card_header_dropdown">
+                    <a class="btn dropdown-toggle fly_select" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,0">
+                      <span>Birinci Vardiya / 08:00-20.00</span>
+                      <input type="hidden" name="hdn_post" value="">
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li data-value="1"><a class="dropdown-item" href="#">Birinci Vardiya / 08:00-20.00</a></li>
+                      <li data-value="2"><a class="dropdown-item" href="#">İkinci Vardiya / 20:00-08.00</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-md-6 mb-3 mb-xl-0">
+                    <div class="card fly_card fly_card_modal_backdrop">
+                      <div class="card-body">
+                        <a href="#" class="position-absolute top-0 start-100 translate-middle refresh"><img src="./images/icons/refresh.svg"></a>
+                        <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Bugün <strong>5 kişi</strong> işe geldi."><img src="./images/icons/green_right_arrow.svg"> Bugün <span class="text_color_blue_flycode">5 kişi</span> işe geldi.</h5>
+                        <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Giriş yapan personel görüntülenmektedir.">Giriş yapan personel görüntülenmektedir.</h6>
+
+                        <div class="table_scroll mt-3" style="">
+                          <div class="load_data_container" data-url="load_data_1.html">
+                            <div class="text-center">
+                              <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a class="d-block text-end mt-2 fly_card_modal" data-bs-toggle="collapse" href=".collapseTable_1" role="link" aria-expanded="false" aria-controls="collapseTable_1">Tümünü Gör</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 mb-3 mb-xl-0">
+                    <div class="card fly_card fly_card_modal_backdrop">
+                      <div class="card-body">
+                        <a href="#" class="position-absolute top-0 start-100 translate-middle refresh"><img src="./images/icons/refresh.svg"></a>
+                        <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Bugün <strong>4 kişi</strong> çıkış yaptı."><img src="./images/icons/green_up_arrow.svg"> Bugün <span class="text_color_blue_flycode">4 kişi</span> çıkış yaptı.</h5>
+                        <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Çıkış yapan personel görüntülenmektedir.">Çıkış yapan personel görüntülenmektedir.</h6>
+
+                        <div class="table_scroll mt-3" style="">
+                          <div class="load_data_container" data-url="load_data_2.html">
+                            <div class="text-center">
+                              <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a class="d-block text-end mt-2 fly_card_modal" data-bs-toggle="collapse" href=".collapseTable_2" role="link" aria-expanded="false" aria-controls="collapseTable_2">Tümünü Gör</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 mb-3 mb-xl-0 mb-lg-0 mb-md-0">
+                    <div class="card fly_card fly_card_modal_backdrop">
+                      <div class="card-body">
+                        <a href="#" class="position-absolute top-0 start-100 translate-middle refresh"><img src="./images/icons/refresh.svg"></a>
+                        <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Bugün <strong>3 kişi</strong> işe gelmedi."><img src="./images/icons/green_cross.svg"> Bugün <span class="text_color_blue_flycode">3 kişi</span> işe gelmedi.</h5>
+                        <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="İşe gelmeyen personel görüntülenmektedir.">İşe gelmeyen personel görüntülenmektedir.</h6>
+
+                        <div class="table_scroll mt-3" style="">
+                          <div class="load_data_container" data-url="load_data_3.html">
+                            <div class="text-center">
+                              <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a class="d-block text-end mt-2 fly_card_modal" data-bs-toggle="collapse" href=".collapseTable_3" role="link" aria-expanded="false" aria-controls="collapseTable_3">Tümünü Gör</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="card fly_card fly_card_modal_backdrop">
+                      <div class="card-body">
+                        <a href="#" class="position-absolute top-0 start-100 translate-middle refresh"><img src="./images/icons/refresh.svg"></a>
+                        <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Bugün <strong>2 kişi</strong> izinli."><img src="./images/icons/green_check.svg"> Bugün <span class="text_color_blue_flycode">2 kişi</span> izinli.</h5>
+                        <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="İzinli personel görüntülenmektedir.">İzinli personel görüntülenmektedir.</h6>
+
+                        <div class="table_scroll mt-3" style="">
+                          <div class="load_data_container" data-url="load_data_4.html">
+                            <div class="text-center">
+                              <div class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden">Yükleniyor...</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a class="d-block text-end mt-2 fly_card_modal" data-bs-toggle="collapse" href=".collapseTable_4" role="link" aria-expanded="false" aria-controls="collapseTable_4">Tümünü Gör</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card fly_card">
+              <div class="card-body">
+                <h4 class="card-title mb-4 text-muted">Ceyber Eğitim Kurumları</h4>
+                <div class="card border-0 fly_card">
+                  <div class="card-body p-0">
+                    <div class="d-flex flex-row align-items-center justify-content-between">
+                      <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Giriş - Çıkış Ortalamaları"><img src="./images/icons/green_average.svg"> Giriş - Çıkış Ortalamaları</h5>
+                      <a href="#" class="refresh" onclick="bootstrap_table_refresh('table2')"><img src="./images/icons/refresh.svg"></a>
+                    </div>
+                    <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Personelinizin giriş - çıkış istatistikleri görüntülenmektedir.">Personelinizin giriş - çıkış istatistikleri görüntülenmektedir.</h6>
+                    <div class="mt-3">
+                      <table id="table2" class="table_style_1" data-height="250" data-url="./json/data_1.json">
+                        <thead>
+                          <tr>
+                            <th data-field="personel">Personel</th>
+                            <th data-field="ortalama_giris">Ortalama Giriş</th>
+                            <th data-field="ortalama_cikis">Ortalama Çıkış</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card fly_card">
+              <div class="card-body">
+                <div class="card border-0 fly_card">
+                  <div class="card-body p-0">
+                    <div class="d-flex flex-row align-items-center justify-content-between">
+                      <h5 class="card-title text-truncate" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="2023 Yılı Resmi Tatiller ve Özel Günler"><img src="./images/icons/green_holiday.svg"> 2023 Yılı Resmi Tatiller ve Özel Günler</h5>
+                      <a href="#" class="refresh" onclick="bootstrap_table_refresh('table3')"><img src="./images/icons/refresh.svg"></a>
+                    </div>
+                    <h6 class="card-subtitle text-truncate ms-3 mt-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Yaklaşmakta olan resmi tatiller ve özel günler görüntülenmektedir.">Yaklaşmakta olan resmi tatiller ve özel günler görüntülenmektedir.</h6>
+                    <div class="mt-3">
+                      <table id="table3" class="table_style_1" data-height="250" data-url="./json/data_2.json">
+                        <thead class="d-none">
+                          <tr>
+                            <th data-field="tarih" class="text-fly_code"></th>
+                            <th data-field="tanim" class="text-center"></th>
+                            <th data-field="tatil_sayisi" class="text-center"></th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+    <!-- ========== Main - End ============  -->
   </div>
+  <!-- ========== Wrapper - End ============  -->
 
   <!-- ========== Her Sayfada Olması Gereken JS'LER - Start ============  -->
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/perfect_scrollbar/perfect-scrollbar.min.js"></script>
+
+  <!-- ========== Nice Scroll - Start ============  -->
+  <script src="./assets/nice_scroll/jquery.nicescroll.min.js"></script>
+
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak JS'LER - Start ============  -->
+  <script src="./assets/date_range_picker/moment.min.js"></script>
+  <script src="./assets/date_range_picker/daterangepicker.min.js"></script>
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak JS'LER - End ============  -->
+
+  <!-- ========== Nice Select JS - End ============  -->
+  <script src="./assets/nice_select/nice-select.min.js"></script>
+  <!-- ========== Nice Select JS - End ============  -->
+
+  <script src="./assets/bootstrap_table/bootstrap-table.min.js"></script>
+  <script src="./assets/bootstrap_table/locale/bootstrap-table-tr-TR.min.js"></script>
+
   <script src="./assets/js/site.js"></script>
   <!-- ========== Her Sayfada Olması Gereken JS'LER - End ============  -->
 

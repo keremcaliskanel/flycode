@@ -1,0 +1,43 @@
+[
+  {
+    "tarih": "23 Ocak",
+    "tanim": "Sömestr Tatili",
+    "tatil_sayisi": "12 Gün Tatil"
+  },
+  {
+    "tarih": "21 Nisan",
+    "tanim": "Ramazan Bayramı",
+    "tatil_sayisi": "3,5 Gün Tatil"
+  },
+  {
+    "tarih": "23 Nisan",
+    "tanim": "Ulusal Egemenlik ve Çocuk Bayramı",
+    "tatil_sayisi": "1 Gün Tatil"
+  },
+  {
+    "tarih": "1 Mayıs",
+    "tanim": "Emek ve Dayanışma Günü",
+    "tatil_sayisi": "1 Gün Tatil"
+  },
+  {
+    "tarih": "19 Mayıs",
+    "tanim": "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+    "tatil_sayisi": "1 Gün Tatil"
+  },
+  {
+    "tarih": "28 Haziran",
+    "tanim": "Kurban Bayramı",
+    "tatil_sayisi": "4,5 Gün Tatil"
+  },
+  {
+    "tarih": "30 Ağustos",
+    "tanim": "Zafer Bayramı",
+    "tatil_sayisi": "1 Gün Tatil"
+  },
+  {
+    "tarih": "29 Ekim",
+    "tanim": "Cumhuriyet Bayramı",
+    "tatil_sayisi": "1 Gün Tatil"
+  }
+  
+]
