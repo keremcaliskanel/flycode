@@ -41,6 +41,7 @@
 	--gray_9: #999998;
 	--gray_10: #F2F1F1;
 	--gray_11: #A7A7A7;
+	--gray_12: #1E1E1E;
 
 	--black_flycode: 	#060618;
 
@@ -69,7 +70,6 @@
 	--border_radius_9: 9px;
 	--border_radius_10: 10px;
 
-
 	--font_weight_300: 	300;
 	--font_weight_400: 	400;
 	--font_weight_500: 	500;
@@ -87,11 +87,17 @@
 	--font_size_19: 19px;
 	--font_size_20: 20px;
 	--font_size_21: 21px;
+	--font_size_22: 22px;
+	--font_size_23: 23px;
 
 	--transition_time: .3s;
 	--transition_efect: ease-in-out;
 
 	--bs-border-radius: var(--border_radius_7);
 	--bs-border-radius-lg: var(--border_radius_7);
+
+	--bs-border-color: var(--gray_4);
+	--bs-body-color: var(--body_text_color);
+	--bs-tertiary-bg: var(--gray_4);
 }
 /* ================= Variable Definitions ================= */

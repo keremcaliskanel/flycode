@@ -4,7 +4,7 @@ Sidebar Action
 Pencere genişliği 991px'den küçük ve eşit ise sidebar'ı açar kapatır
 */
 function sideBarAction(width) {
-  
+
   if(width <= '991'){
     var $sidebar = $('#sidebar').toggleClass("collapse click",true);
     /*console.log($('#sidebar').width());*/
@@ -28,15 +28,17 @@ function bootstrap_table_refresh(tbl_id) {
 
 /*------------ PAGE RESIZE ------------*/
 $(window).on('resize', function() {
-  
+
   /* Sidebar Action - Start */
   sideBarAction($('body').width());
 
   /* Pencere genişiliği 1200'den büyük ve eşit olduğunda */
   /* Mobil filtre canvas'ı açıksa kapat */
   if($('body').width() >= '1200'){
-    if($('#header_filter_mobile').hasClass('show')){
-      $('#header_filter_mobile').find('.offcanvas-header').find('.btn-close').click();
+    if($('#header_filter_mobile').length > 0){
+      if($('#header_filter_mobile').hasClass('show')){
+        $('#header_filter_mobile').find('.offcanvas-header').find('.btn-close').click();
+      }
     }
   }
 
@@ -50,15 +52,17 @@ $(document).ready(function() {
   bsOffcanvas.show();*/
 
   /*------------ HEADER BÖLÜMÜNDEKİ FİLTRE SEÇENEKLERİ OFFCANVASI ------------*/
-  const header_filter_mobile_off_canvas = document.getElementById('header_filter_mobile');
-  header_filter_mobile_off_canvas.addEventListener('shown.bs.offcanvas', event => {
-    $('#header_filter_mobile').removeClass('d-none d-xl-block').addClass('offcanvas offcanvas-end').attr('data-bs-scroll',true);
-    $('#header_filter_mobile').find('.btn-group').removeClass('btn-group').addClass('btn-group-vertical');
-  })
-  header_filter_mobile_off_canvas.addEventListener('hidden.bs.offcanvas', event => {
-    $('#header_filter_mobile').removeClass('offcanvas offcanvas-end').addClass('d-none d-xl-block');
-    $('#header_filter_mobile').find('.btn-group-vertical').removeClass('btn-group-vertical').addClass('btn-group');
-  });
+  if($('#header_filter_mobile').length > 0){
+    const header_filter_mobile_off_canvas = document.getElementById('header_filter_mobile');
+    header_filter_mobile_off_canvas.addEventListener('shown.bs.offcanvas', event => {
+      $('#header_filter_mobile').removeClass('d-none d-xl-block').addClass('offcanvas offcanvas-end').attr('data-bs-scroll',true);
+      $('#header_filter_mobile').find('.btn-group').removeClass('btn-group').addClass('btn-group-vertical');
+    })
+    header_filter_mobile_off_canvas.addEventListener('hidden.bs.offcanvas', event => {
+      $('#header_filter_mobile').removeClass('offcanvas offcanvas-end').addClass('d-none d-xl-block');
+      $('#header_filter_mobile').find('.btn-group-vertical').removeClass('btn-group-vertical').addClass('btn-group');
+    });
+  }
   /*------------ HEADER BÖLÜMÜNDEKİ FİLTRE SEÇENEKLERİ OFFCANVASI ------------*/
   
   /*------------ LOAD DATA + REFRESH ACTION 1 ------------*/
@@ -100,11 +104,11 @@ $(document).ready(function() {
   /*------------ BOOTSTRAP TOOLTIP - INIT ------------*/
 
   /*------------ NICE SELECT PLUGIN - INIT ------------*/
-  $('select').niceSelect();
+  $('select[name="slcUnit"]').niceSelect();
   /*------------ NICE SELECT PLUGIN - INIT ------------*/
 
   /*------------ BOOTSTRAP TABLE PLUGIN - INIT ------------*/
-  $('#table1, #table2, #table3').bootstrapTable({ classes: 'table' });
+  $('#table1, #table2, #table3, #table_fly').bootstrapTable({ classes: 'table' });
   /*------------ BOOTSTRAP TABLE PLUGIN - INIT ------------*/
 
   /*------------ SIDEBAR ACTION ------------*/
@@ -131,52 +135,54 @@ $(document).ready(function() {
   /*------------ SIDEBAR ACTION ------------*/
 
   /*------------ DATE RANGE PLUGIN - INIT ------------*/
-  $('input[name="startDate"], input[name="endDate"]').dateRangePicker({
-    autoClose: true,
-    inline:true,
-    container: '#date-range-container',
-    alwaysOpen:true,
-    language: 'tr',
-    format: 'DD.MM.YYYY',
-    separator : '',
-    singleMonth: true,
-    startOfWeek: 'monday',
-    customArrowPrevSymbol: '<i class="far fa-chevron-left fa-lg fa-fw"></i>',
-    customArrowNextSymbol: '<i class="far fa-chevron-right fa-lg fa-fw"></i>',
-    getValue: function()
-    {
-      if ($('input[name="startDate"]').val() && $('input[name="endDate"]').val()){
-        return $('input[name="startDate"]').val() + ' to ' + $('input[name="endDate"]').val();
-      }else{
-        return '';
+  if($('#date-range-container').length > 0){
+    $('input[name="startDate"], input[name="endDate"]').dateRangePicker({
+      autoClose: true,
+      inline:true,
+      container: '#date-range-container',
+      alwaysOpen:true,
+      language: 'tr',
+      format: 'DD.MM.YYYY',
+      separator : '',
+      singleMonth: true,
+      startOfWeek: 'monday',
+      customArrowPrevSymbol: '<i class="far fa-chevron-left fa-lg fa-fw"></i>',
+      customArrowNextSymbol: '<i class="far fa-chevron-right fa-lg fa-fw"></i>',
+      getValue: function()
+      {
+        if ($('input[name="startDate"]').val() && $('input[name="endDate"]').val()){
+          return $('input[name="startDate"]').val() + ' to ' + $('input[name="endDate"]').val();
+        }else{
+          return '';
+        }
+      },
+      setValue: function(s,s1,s2)
+      {
+        /* Tarih Formatını Sorgulama Şekline Göre Düzenler */
+        var s1Array = s1.split('.');
+        var s1New = s1Array[2]+s1Array[1]+s1Array[0];
+        /* Hidden Inputlara Değer Atanır */
+        $('input[name="startDate"]').val(s1New);
+        
+        /* Tarih Formatını Sorgulama Şekline Göre Düzenler */
+        var s2Array = s2.split('.');
+        var s2New = s2Array[2]+s2Array[1]+s2Array[0];
+        /* Hidden Inputlara Değer Atanır */
+        $('input[name="endDate"]').val(s2New);
+
+        /* Hidden Inputlara Değer Atandıktan Sonra Post İşlemi Yapılabilir */
+        alert('POST DATA: ' + s1New + ' / ' + s2New);
+
+        /* Tarih Aralığı Seçimi Dropdown'u Kapatır */
+        bootstrap.Dropdown.getOrCreateInstance('.dropdown_date_range').toggle();
       }
-    },
-    setValue: function(s,s1,s2)
-    {
-      /* Tarih Formatını Sorgulama Şekline Göre Düzenler */
-      var s1Array = s1.split('.');
-      var s1New = s1Array[2]+s1Array[1]+s1Array[0];
-      /* Hidden Inputlara Değer Atanır */
-      $('input[name="startDate"]').val(s1New);
-      
-      /* Tarih Formatını Sorgulama Şekline Göre Düzenler */
-      var s2Array = s2.split('.');
-      var s2New = s2Array[2]+s2Array[1]+s2Array[0];
-      /* Hidden Inputlara Değer Atanır */
-      $('input[name="endDate"]').val(s2New);
-
-      /* Hidden Inputlara Değer Atandıktan Sonra Post İşlemi Yapılabilir */
-      alert('POST DATA: ' + s1New + ' / ' + s2New);
-
-      /* Tarih Aralığı Seçimi Dropdown'u Kapatır */
-      bootstrap.Dropdown.getOrCreateInstance('.dropdown_date_range').toggle();
+    });
+    /* Hidden Inputlarda Değer Var İse Takvimde Seçili Gelmesini Sağlar */
+    if($('input[name="startDate"]').data('value') != '' && $('input[name="endDate"]').data('value')){
+      var startDate = $('input[name="startDate"]').data('value');
+      var endDate = $('input[name="endDate"]').data('value');
+      $('input[name="startDate"], input[name="endDate"]').data('dateRangePicker').setDateRange(startDate,endDate);
     }
-  });
-  /* Hidden Inputlarda Değer Var İse Takvimde Seçili Gelmesini Sağlar */
-  if($('input[name="startDate"]').data('value') != '' && $('input[name="endDate"]').data('value')){
-    var startDate = $('input[name="startDate"]').data('value');
-    var endDate = $('input[name="endDate"]').data('value');
-    $('input[name="startDate"], input[name="endDate"]').data('dateRangePicker').setDateRange(startDate,endDate);
   }
   /*------------ DATE RANGE PLUGIN - INIT ------------*/
 
@@ -204,6 +210,91 @@ $(document).ready(function() {
     $('[data-bs-toggle="tooltip"]').tooltip();
   });
   /*------------ YERİNDE MODAL AÇAR ------------*/
+
+  /*------------ FORMUN input-group-text'lerinin GENİŞLİKLERİNİ EN GENİŞ OLANA GÖRE AYARLAR ------------*/
+  var max_input_group_text = 0;
+  $('#frm_fly .input-group-text').each(function(index){
+    var currentWidth = $(this).width();
+    if(currentWidth > max_input_group_text){
+      max_input_group_text = currentWidth;
+    }
+  });
+  $('#frm_fly .input-group-text').width(max_input_group_text);
+  /*------------ FORMUN input-group-text'lerinin GENİŞLİKLERİNİ EN GENİŞ OLANA GÖRE AYARLAR ------------*/
+
+  /*------------ FORM İÇİNDE btn_fix_width CLASS'INA SAHİP TÜM BUTTONLARIN GENİŞLİKLERİ EŞİTLER ------------*/
+  var max_btn_fix_width = 0;
+  $('#frm_fly .btn_fix_width').each(function(index){
+    var currentWidth = $(this).width();
+    if(currentWidth > max_btn_fix_width){
+      max_btn_fix_width = currentWidth;
+    }
+  });
+  $('#frm_fly .btn_fix_width').width(max_btn_fix_width);
+  /*------------ FORM İÇİNDE btn_fix_width CLASS'INA SAHİP TÜM BUTTONLARIN GENİŞLİKLERİ EŞİTLER ------------*/
+
+  /*------------ SAYFADA TAKVİM İÇİN INPUT KULLANILIYORSA ------------*/
+  if($('.fly_single_date_container').length > 0){
+    $('input[name="fly_single_date"]').each(function(index){
+      $(this).dateRangePicker({
+        autoClose: true,
+        singleDate : true,
+        showShortcuts: false,
+        language: 'tr',
+        format: 'DD.MM.YYYY',
+        singleDate : true,
+        singleMonth: true,
+        showTopbar: false,
+        container: $(this).parent().find('.fly_single_date_container'),
+        /*container: $(this).parent().next('.fly_single_date_container'),*/
+        customArrowPrevSymbol: '<i class="far fa-chevron-left fa-lg fa-fw"></i>',
+        customArrowNextSymbol: '<i class="far fa-chevron-right fa-lg fa-fw"></i>',
+      }).bind('datepicker-open',function(){
+        
+      });
+    });
+  }
+  /*------------ SAYFADA TAKVİM İÇİN INPUT KULLANILIYORSA ------------*/
+
+  /*------------ TABLODA BİR SATIRA TIKLANINCA SEÇİLİ HALE GETİRİLMESİ ------------*/
+  $(document).on('click', '#table_fly tr', function() {
+    // Seçilen satırdaki diğer satırlardan 'selected' sınıfını kaldır
+    $(this).siblings().removeClass('selected');
+    // Tıklanan satıra 'selected' sınıfını ekle
+    $(this).addClass('selected');
+  });
+  /*------------ TABLODA BİR SATIRA TIKLANINCA SEÇİLİ HALE GETİRİLMESİ ------------*/
+
+  /*------------ TABLODA SEARCH OLACAKSA ------------*/
+  if($('#table_fly').data('search')){
+    $('#table_fly').parent().parent().parent().find('.search').addClass('table_fly_search_container');
+  }
+  /*------------ TABLODA SEARCH OLACAKSA ------------*/
+
+  /*------------ SWEET CONFIRM MODAL ------------*/
+  $(document).on('click', '.btn_delete', function() {
+    var title = $(this).data('sweet-alert-title');
+    Swal.fire({
+      title: title,
+      showCancelButton: true,
+      confirmButtonColor: "#F0F1F2",
+      confirmButtonText: "Evet",
+      cancelButtonColor: "#F0F1F2",
+      cancelButtonText: "Hayır",
+      iconHtml: '<img src="./images/logo-amblem.svg" width="95">'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Kayıt Silinmiştir!",
+          confirmButtonColor: "#F0F1F2",
+          confirmButtonText: "Tamam",
+          iconHtml: '<img src="./images/logo-amblem.svg" width="95">'
+        });
+      }
+    });
+  });
+  /*------------ SWEET CONFIRM MODAL ------------*/
+
 
 });
 
