@@ -1,0 +1,22 @@
+[
+  {
+    "kisi_gorsel": "<a href=\"#\"><img src=\"images/users/user_2.jpg\" width=\"25\" class=\"rounded-circle border\"></a>",
+    "ad_soyad": "<a href=\"#\">4 Ayşe Yıldız</a>"
+  },
+  {
+    "kisi_gorsel": "<a href=\"#\"><img src=\"images/users/user_3.jpg\" width=\"25\" class=\"rounded-circle border\"></a>",
+    "ad_soyad": "<a href=\"#\">Mehmet Aydın</a>"
+  },
+  {
+    "kisi_gorsel": "<a href=\"#\"><img src=\"images/users/user_4.jpg\" width=\"25\" class=\"rounded-circle border\"></a>",
+    "ad_soyad": "<a href=\"#\">İpek Deniz</a>"
+  },
+  {
+    "kisi_gorsel": "<a href=\"#\"><img src=\"images/users/user_5.jpg\" width=\"25\" class=\"rounded-circle border\"></a>",
+    "ad_soyad": "<a href=\"#\">Mustafa Koç</a>"
+  },
+  {
+    "kisi_gorsel": "<a href=\"#\"><img src=\"images/users/user_6.jpg\" width=\"25\" class=\"rounded-circle border\"></a>",
+    "ad_soyad": "<a href=\"#\">Ahmet Gümüş</a>"
+  }
+]
