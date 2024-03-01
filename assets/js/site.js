@@ -66,27 +66,40 @@ $(document).ready(function() {
   /*------------ HEADER BÖLÜMÜNDEKİ FİLTRE SEÇENEKLERİ OFFCANVASI ------------*/
   
   /*------------ LOAD DATA + REFRESH ACTION 1 ------------*/
-  function loadData(element) {
+  function loadData(element,index) {
     var $this = element;
-    var $url = $this.data('url');
-    /*console.log($this.data('url'));*/
-    $this.load($url, function( response, status, xhr ) {
-      /*console.log(response);
-      console.log(status);
-      console.log(xhr);*/
+    var url = $this.data('url');
+    $.getJSON(url, function(data){
+      var veri_tablosu = '<table class="table table-sm table-borderless mb-0 fly_static_table"><tbody>';
+      var tablo_satirlari = '';
+      $.each(data, function(key, value){
+        var tablo_satir_class = '';
+        if((key+1) > 2){
+          tablo_satir_class += 'collapse collapseTable_'+index;
+        }
+        tablo_satirlari += '<tr class="'+tablo_satir_class+'">';
+        tablo_satirlari += '<td>' + value.kisi_gorsel + '</td>';
+        tablo_satirlari += '<td class="w-100 align-middle">' + value.ad_soyad + '</td>';
+        tablo_satirlari += '</tr>';
+      });
+      veri_tablosu += tablo_satirlari;
+      veri_tablosu += '</tbody></table>';
+      $this.html(veri_tablosu);
     });
   }
   /* sayadaki tüm load_data_containerlara veri yükler  */
   $('.load_data_container').each(function(index){
     if ($(this).length > 0) {
-      loadData($(this));
+      var index = index+1;
+      loadData($(this),index);
     }
   });
   $(document).on('click', '.refresh', function() {
     /* refresh classına sahip olan elemandan sonraki ilk load_data_container */
     var $obj = $(this).parent().find('div.load_data_container').first();
     if ($obj.length > 0) {
-      loadData($obj);
+      var index = $(this).data('container-id');
+      loadData($obj,index);
     }
   });
   /*------------ LOAD DATA + REFRESH ACTION 1 ------------*/
