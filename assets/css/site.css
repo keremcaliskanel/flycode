@@ -15,6 +15,9 @@
 	font-size: var(--font_size_23);
 	color: var(--gray_9);
 }
+.nowrap{
+	white-space: nowrap;
+}
 /* ================= General Definitions ================= */
 
 /* ================= Scroll ================= */
