@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="">
+  <title>Birimler - 1</title>
+  <link rel="canonical" href="">
+
+  <!-- ========== Favicons - Start ============  -->
+  <link rel="apple-touch-icon" href="./images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="./images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="mask-icon" href="./images/favicons/safari-pinned-tab.svg" sizes="192x192" color="#20FFA3">
+  <link rel="icon" href="./images/favicons/favicon.ico">
+  <meta name="theme-color" content="#20FFA3">
+  <!-- ========== Favicons - End ============  -->
+
+  <!-- ========== Her Sayfada Olması Gereken CSS'LER - Start ============  -->
+  <link href="./assets/fonts/poppins/style.css" rel="stylesheet">
+  <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ========== FontAwesome Icon Library - Start ============  -->
+  <link href="./assets/fontawesome/all.min.css" rel="stylesheet">
+
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak CSS'LER - Start ============  -->
+  <link href="./assets/date_range_picker/daterangepicker.min.css" rel="stylesheet">
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak CSS'LER - End ============  -->
+
+  <!-- ========== Nice Select CSS - Start ============  -->
+  <link href="./assets/nice_select/nice-select.css" rel="stylesheet">
+  <!-- ========== Nice Select CSS - End ============  -->
+
+  <!-- ========== Bootstrap CSS - Start ============  -->
+  <link href="./assets/bootstrap_table/bootstrap-table.min.css" rel="stylesheet">
+  <!-- ========== Bootstrap CSS - End ============  -->
+
+
+  <!-- <link href="./assets/sweetalert2/sweetalert2.min.css" rel="stylesheet"> -->
+  <!-- <link href="./assets/sweetalert2/bootstrap-4.min.css" rel="stylesheet"> -->
+
+
+  <link href="./assets/css/variable.css" rel="stylesheet">
+  <link href="./assets/css/site.css" rel="stylesheet">
+  <link href="./assets/css/responsive.css" rel="stylesheet">
+  <!-- ========== Her Sayfada Olması Gereken CSS'LER - End ============  -->
+</head>
+<body>
+  <!-- ========== Wrapper - Start ============  -->
+  <div id="wrapper">
+    <!-- ========== Sidebar - Start ============  -->
+    <aside id="sidebar" class="">
+      <!-- ========== Sidebar Header - Start ============  -->
+      <div class="d-flex justify-content-center flex-row-reverse align-items-center position-relative sidebar_header">
+        <!-- ========== Toggle Button - Start ============  -->
+        <a href="#" class="toggle-btn"><img src="./images/icons/left_arrow.svg"></a>
+        <!-- ========== Toggle Button - End ============  -->
+        <!-- ========== Logo - Start ============  -->
+        <div class="sidebar-logo">
+          <a href="#" class="logo-amblem"><img src="./images/logo-amblem.svg" width="45" class="me-2"></a>
+          <a href="#" class="logo-name"><img src="./images/logo-name.svg" width="115"></a>
+        </div>
+        <!-- ========== Logo - End ============  -->
+      </div>
+      <!-- ========== Sidebar Header - End ============  -->
+
+      <!-- ========== Sidebar Menu - Start ============  -->
+      <ul class="sidebar-nav list-unstyled">
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link active">
+            <img src="./images/icons/home.svg" class="icon">
+            <span>Giriş</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/staff.svg" class="icon">
+            <span>Personeller</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/units.svg" class="icon">
+            <span>Birimler</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#mnu_1" aria-expanded="false" aria-controls="mnu_1">
+            <img src="./images/icons/reports.svg" class="icon">
+            <span>Günlük Raporlar</span>
+          </a>
+          <ul id="mnu_1" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Giriş / Çıkış</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Çalışma Saatleri</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Geç Kalanlar</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Erken Çıkanlar</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Gelmeyenler</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">İçerdekiler / Dışardakiler</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/shifts.svg" class="icon">
+            <span>Mesailer</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/users.svg" class="icon">
+            <span>Kullanıcılar</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#mnu_2" aria-expanded="false" aria-controls="mnu_2">
+            <img src="./images/icons/records.svg" class="icon">
+            <span>Kayıt İşlemleri</span>
+          </a>
+          <ul id="mnu_2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Kayıt Düzeltme</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">İzinler</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Resmi Tatiller</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/user_add.svg" class="icon">
+            <span>Mesai Planları</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <img src="./images/icons/devices.svg" class="icon">
+            <span>Cihazlar</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#mnu_3" aria-expanded="false" aria-controls="mnu_3">
+            <img src="./images/icons/user_check.svg" class="icon">
+            <span>Zaman Yönetimi</span>
+          </a>
+          <ul id="mnu_3" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link collapsed has-dropdown-2" data-bs-toggle="collapse" data-bs-target="#mnu_3_1" aria-expanded="false" aria-controls="mnu_3_1">Raporlar</a>
+              <ul id="mnu_3_1" class="sidebar-dropdown list-unstyled collapse">
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Detaylı</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Toplam</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Diğer</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Ayarlar</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Hesaplamalar</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target="#mnu_4" aria-expanded="false" aria-controls="mnu_4">
+            <img src="./images/icons/mobile.svg" class="icon">
+            <span>Mobil Uygulama</span>
+          </a>
+          <ul id="mnu_4" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Kullanıcı Oluştur</a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">Bildirimler</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- ========== Sidebar Menu - End ============  -->
+
+      <!-- ========== Sidebar Footer - Start ============  -->
+      <div class="sidebar-footer">
+        <a href="#" class="sidebar-link">
+          <img src="./images/icons/settings.svg" class="icon">
+          <span>Ayarlar</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <img src="./images/icons/logout.svg" class="icon">
+          <span>Çıkış</span>
+        </a>
+      </div>
+      <!-- ========== Sidebar Footer - End ============  -->
+    </aside>
+    <!-- ========== Sidebar - End ============  -->
+
+    <!-- ========== Header - Start ============  -->
+    <header id="header">
+      <div class="row g-0 d-flex justify-content-between align-items-center">
+        <!-- ========== Page Title - Start ============  -->
+        <div class="col-auto">
+          <div class="page_title">Birimler</div>
+        </div>
+        <!-- ========== Page Title - End ============  -->
+
+        <div class="col-auto">
+          <!-- Filter Offcanvas -->
+          <button class="btn btn-secondary rounded-circle p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter.svg"></button>
+          <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasFilter">
+            <div class="offcanvas-header">
+              <button class="btn btn-secondary rounded-circle p-0 active me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter_blue.svg"></button>
+              <button class="btn btn-secondary rounded-circle p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification.svg"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Filter Form -->
+              <form name="frm_filter" id="frm_filter" action="" method="post" class="h-100">
+                <div class="d-flex align-items-start flex-column h-100">
+
+                  <!-- Company Name TextBox -->
+                  <div class="w-100 mb-3">
+                    <input type="text" class="form-control form-control-lg search_box" id="companyName" name="companyName" placeholder="Şirket Adı">
+                  </div>
+                  <!-- Company Name TextBox -->
+
+                  <!-- Nice Select -->
+                  <div class="w-100 mb-3">
+                    <select name="slcUnit" id="slcUnit" class="wide nice_select_dark" aria-label="Birim">
+                      <option data-display="Birim">Birim</option>
+                      <option value="1">Head Office</option>
+                      <option value="2">İdari</option>
+                      <option value="3">Sales Office</option>
+                      <option value="4">Taşeron</option>
+                      <option value="5">Üretim ve Lojistik</option>
+                    </select>
+                  </div>
+                  <!-- Nice Select -->
+
+                  <!-- Table -->
+                  <div class="w-100 h-100 mb-auto table_container dark need_scroll">
+                    <table id="table1" class="table-dark table-hover table-sm">
+                      <thead>
+                        <tr>
+                          <th>Sicil</th>
+                          <th>Ad Soyad</th>
+                          <th>Birim</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_1">
+                              <label class="form-check-label" for="chk_1">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_2">
+                              <label class="form-check-label" for="chk_2">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_3">
+                              <label class="form-check-label" for="chk_3">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_4">
+                              <label class="form-check-label" for="chk_4">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_5">
+                              <label class="form-check-label" for="chk_5">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_6">
+                              <label class="form-check-label" for="chk_6">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_7">
+                              <label class="form-check-label" for="chk_7">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_8">
+                              <label class="form-check-label" for="chk_8">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_9">
+                              <label class="form-check-label" for="chk_9">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="chk_10">
+                              <label class="form-check-label" for="chk_10">1022</label>
+                            </div>
+                          </th>
+                          <td>Serkan Yetkin</td>
+                          <td>Head Office</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Table -->
+
+                  <!-- Buttons -->
+                  <div class="w-100 mt-3 d-flex align-items-center flex-column">
+                    <button type="button" class="btn btn-light w-50 mb-3">Uygula</button>
+                    <button type="button" class="btn btn-light w-50">Temizle</button>
+                  </div>
+                  <!-- Buttons -->
+
+                </div>
+              </form>
+              <!-- Filter Form -->
+            </div>
+          </div>
+          <!-- Filter Offcanvas -->
+
+          <!-- Notification Offcanvas -->
+          <button class="btn btn-secondary rounded-circle p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification.svg"></button>
+          <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasNotification">
+            <div class="offcanvas-header">
+              <button class="btn btn-secondary rounded-circle p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter"><img src="./images/icons/filter.svg"></button>
+              <button class="btn btn-secondary rounded-circle p-0 active" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotification" aria-controls="offcanvasNotification"><img src="./images/icons/notification_blue.svg"></button>
+            </div>
+            <div class="offcanvas-body need_scroll">
+              <div class="d-flex align-items-start flex-column h-100">
+                <div class="mb-auto w-100 h-100">
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3 readed">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+
+                  <!-- Notification Item -->
+                  <div class="d-flex position-relative notification mb-3">
+                    <div>
+                      <h5 class="mt-0">Lorem ipsum dolor</h5>
+                      <p class="m-0">sit amet, consectetuer adipiscing</p>
+                      <a href="#" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Notification Offcanvas -->
+        </div>
+      </div>
+    </header>
+    <!-- ========== Header - End ============  -->
+
+    <!-- ========== Main - Start ============  -->
+    <main id="main">
+      <div class="container-fluid p-0">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <div class="card fly_card border-0 bg-transparent">
+              <div class="card-body p-0">
+                <div id="frm_fly">
+                  <form name="frm_birimler" id="frm_birimler" method="post" action="">
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        
+                        <div class="input-group input-group-lg mb-3">
+                          <span class="input-group-text" id="birim_adi">Birim Adı</span>
+                          <input type="text" name="birim_adi" id="birim_adi" class="form-control" value="">
+                        </div>
+                        
+                        <div class="mb-3">
+                          <div class="list-group" id="birim_listesi" data-url="./json/load_data_5.json">
+                            <a class="list-group-item list-group-item-action" href="#" data-id="1">Head Office</a>
+                            <a class="list-group-item list-group-item-action" href="#" data-id="2">İdari</a>
+                            <a class="list-group-item list-group-item-action" href="#" data-id="3">Sales Office</a>
+                            <a class="list-group-item list-group-item-action" href="#" data-id="4">Taşeron</a>
+                            <a class="list-group-item list-group-item-action" href="#" data-id="5">Taşeron</a>
+                            <a class="list-group-item list-group-item-action" href="#" data-id="6">Yazılım</a>
+                          </div>
+                          <input type="hidden" name="birim_id" id="birim_id" value="">
+                        </div>
+
+                        <div class="">
+                          <button type="button" class="btn btn-light btn_fix_width">Yeni Birim</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width btn_delete" data-sweet-alert-title="Seçili birim silinsin mi?">Sil</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width">Düzenle</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width">Kaydet</button>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        
+                        <div class="input-group input-group-lg mb-3">
+                          <span class="input-group-text" id="alt_birim_adi">Alt Birim Adı</span>
+                          <input type="text" name="alt_birim_adi" id="alt_birim_adi" class="form-control" value="">
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="list-group empty_list_group" id="alt_birim_listesi">
+                          </div>
+                          <input type="hidden" name="alt_birim_id" id="alt_birim_id" value="">
+                        </div>
+
+                        <div class="">
+                          <button type="button" class="btn btn-light btn_fix_width">Yeni Alt Birim</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width btn_delete" data-sweet-alert-title="Seçili alt birim silinsin mi?">Sil</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width">Düzenle</button>
+                          <div class="clearfix mb-3"></div>
+                          <button type="button" class="btn btn-light btn_fix_width">Kaydet</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- ========== Main - End ============  -->
+  </div>
+  <!-- ========== Wrapper - End ============  -->
+
+  <!-- ========== Her Sayfada Olması Gereken JS'LER - Start ============  -->
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ========== Nice Scroll - Start ============  -->
+  <script src="./assets/nice_scroll/jquery.nicescroll.min.js"></script>
+
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak JS'LER - Start ============  -->
+  <script src="./assets/date_range_picker/moment.min.js"></script>
+  <script src="./assets/date_range_picker/daterangepicker.min.js"></script>
+  <!-- ========== Takvim Olması Gereken Sayfalarda Kullanıcılacak JS'LER - End ============  -->
+
+  <!-- ========== Nice Select JS - End ============  -->
+  <script src="./assets/nice_select/nice-select.min.js"></script>
+  <!-- ========== Nice Select JS - End ============  -->
+
+  <script src="./assets/bootstrap_table/bootstrap-table.min.js"></script>
+  <script src="./assets/bootstrap_table/locale/bootstrap-table-tr-TR.min.js"></script>
+  
+  <script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
+
+  <script src="./assets/js/site.js"></script>
+  <!-- ========== Her Sayfada Olması Gereken JS'LER - End ============  -->
+
+</body>
+</html>
