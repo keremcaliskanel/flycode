@@ -321,8 +321,47 @@ $(document).ready(function() {
   });
   /*------------ SWEET CONFIRM MODAL ------------*/
 
+  /*------------ BİRİMLER FORMUNDAKİ BİRİM LİSTESİ İŞLEMLERİ ------------*/
+  $('#frm_fly .empty_list_group').css('min-height',$('#frm_fly #birim_listesi').height());
+  /* Birim listesine tıklanınca */
+  $(document).on('click', '#frm_birimler #birim_listesi .list-group-item', function() {
+    $('input[name="birim_id"]').val($(this).data('id'));
+    $('input[name="birim_adi"]').val($(this).text());
+    var $this = $(this).parent();
+    var url = $this.data('url');
+    $.getJSON(url, function(data){
+      var list_item = '';
+      $.each(data, function(key, value){
+        list_item += '<a class="list-group-item list-group-item-action" href="#" data-id="'+value.alt_birim_id+'">'+value.alt_birim_adi+'</a>';
+      });
+      $('#alt_birim_listesi').removeClass('empty_list_group').css('min-height','auto').html(list_item);
+    });
+  });
+  /* Alt birim listesine tıklanınca */
+  $(document).on('click', '#frm_birimler #alt_birim_listesi .list-group-item', function() {
+    $('input[name="alt_birim_id"]').val($(this).data('id'));
+    $('input[name="alt_birim_adi"]').val($(this).text());
+  });
+  /*------------ BİRİMLER FORMUNDAKİ BİRİM LİSTESİ İŞLEMLERİ ------------*/
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
