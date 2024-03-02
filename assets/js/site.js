@@ -87,6 +87,14 @@ $(document).ready(function() {
       $this.html(veri_tablosu);
     });
   }
+  function countData(element,callback) {
+    var $this = element;
+    var url = $this.data('url');
+    $.getJSON(url, function(data){
+      var totalCount = data.length;
+      callback(totalCount);
+    });
+  }
   /* sayadaki tüm load_data_containerlara veri yükler  */
   $('.load_data_container').each(function(index){
     if ($(this).length > 0) {
@@ -100,6 +108,11 @@ $(document).ready(function() {
     if ($obj.length > 0) {
       var index = $(this).data('container-id');
       loadData($obj,index);
+
+      var count_container = $(this).parent().find('span.text_color_blue_flycode');
+      countData($obj, function(totalCount) {
+        count_container.html(totalCount+' kişi');
+      });
     }
   });
   /*------------ LOAD DATA + REFRESH ACTION 1 ------------*/
