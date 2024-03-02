@@ -1202,5 +1202,33 @@ table.fly_static_table.table>:not(caption)>*>* {
 
 
 
+#frm_fly .list-group {
+    --bs-list-group-color: var(--gray_9);
+    --bs-list-group-bg: var(--bs-body-bg);
+    --bs-list-group-border-color: var(--border_color);
+    --bs-list-group-border-width: var(--bs-border-width);
+    --bs-list-group-border-radius: var(--bs-border-radius);
+    --bs-list-group-item-padding-x: 1rem;
+    --bs-list-group-item-padding-y: 0.5rem;
+    --bs-list-group-action-color: var(--bs-secondary-color);
+    --bs-list-group-action-hover-color: var(--white);
+    --bs-list-group-action-hover-bg: #0000FE80;
+    --bs-list-group-action-active-color: var(--white);
+    --bs-list-group-action-active-bg: #0000FE80;
+    --bs-list-group-disabled-color: var(--bs-secondary-color);
+    --bs-list-group-disabled-bg: var(--bs-body-bg);
+    --bs-list-group-active-color: var(--white);
+    --bs-list-group-active-bg: #0000FE80;
+    --bs-list-group-active-border-color: var(--border_color);
+    border-radius: var(--border_radius_7);
+    font-size: var(--font_size_16);
+    letter-spacing: 0.64px;
+    font-family: var(--font_poppins_semi_bold);
+}
+
+#frm_fly .empty_list_group{
+	border: 1px solid var(--border_color);
+    background-color: var(--white);
+}
 
 
