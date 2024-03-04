@@ -99,7 +99,11 @@ $(document).ready(function() {
   $('.load_data_container').each(function(index){
     if ($(this).length > 0) {
       var index = index+1;
-      loadData($(this),index);
+        loadData($(this), index);
+        var count_container = $(this).parent().parent().find('span.text_color_blue_flycode');
+        countData($(this), function (totalCount) {
+            count_container.html(totalCount + ' kişi');
+        });
     }
   });
   $(document).on('click', '.refresh', function() {
@@ -261,7 +265,7 @@ $(document).ready(function() {
 
   /*------------ SAYFADA TAKVİM İÇİN INPUT KULLANILIYORSA ------------*/
   if($('.fly_single_date_container').length > 0){
-    $('input[name="fly_single_date"]').each(function(index){
+    $('input[type="text"].fly_single_date').each(function(index){
       $(this).dateRangePicker({
         autoClose: true,
         singleDate : true,
@@ -343,6 +347,13 @@ $(document).ready(function() {
     $('input[name="alt_birim_adi"]').val($(this).text());
   });
   /*------------ BİRİMLER FORMUNDAKİ BİRİM LİSTESİ İŞLEMLERİ ------------*/
+
+  
+  /*------------ TEXTBOX MASK ------------*/
+  if($('div.time').length > 0){
+    $("div.time input[type=text]").mask("99:99");
+  }
+  /*------------ TEXTBOX MASK ------------*/
 
 
 });

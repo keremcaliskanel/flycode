@@ -1,7 +1,7 @@
 .show_row [class^=col-],
 .show_row [class^=col] {
 	background-color: rgba(86,61,124,.15);
-	/*border:1px solid;*/
+	border:1px solid;
 }
 
 /* ================= General Definitions ================= */
@@ -14,6 +14,9 @@
 .page_title{
 	font-size: var(--font_size_23);
 	color: var(--gray_9);
+}
+.page_title span{
+	font-family: var(--font_poppins_light);
 }
 .nowrap{
 	white-space: nowrap;
@@ -201,6 +204,22 @@ a {
 }
 .form-control::-ms-input-placeholder {
 	color: var(--form_placeholder_color_0);
+}
+#frm_fly .form-control{
+	font-size: var(--font_size_13);
+	font-family: var(--font_poppins_semi_bold);
+}
+#frm_fly .form-control::placeholder {
+	font-family: var(--font_poppins_light);
+	font-size: var(--font_size_13);
+	color: var(--form_placeholder_color_2);
+	letter-spacing: 0.26px;
+}
+#frm_fly .form-control:-ms-input-placeholder {
+	color: var(--form_placeholder_color_2);
+}
+#frm_fly .form-control::-ms-input-placeholder {
+	color: var(--form_placeholder_color_2);
 }
 /* ================= General Form ================= */
 
@@ -408,7 +427,7 @@ body.login .form-text a{
 	left: 0;
 	top: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 2;
 	height: 133px;
 	margin-left: 330px;
 	border:1px solid var(--border_color);
@@ -447,6 +466,8 @@ body.login .form-text a{
 /* ================= Header User Card ================= */
 
 /* ================= Header Filter Dropdown Button ================= */
+
+#frm_fly .btn_fly,
 #header .btn_fly{
 	line-height: 37px;
 	border: 1px solid var(--border_color);
@@ -456,6 +477,14 @@ body.login .form-text a{
 	font-weight: var(--font_weight_500);
 	width: 104.61px;
 }
+#frm_fly .btn_fly{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: var(--font_size_13);
+	letter-spacing: 0.26px;
+}
+#frm_fly .btn_fly.show,
 #header .btn_fly.show{
 	color: inherit;
 	background-color: inherit;
@@ -465,12 +494,19 @@ body.login .form-text a{
 /* ================= Header Filter Dropdown Button ================= */
 
 /* ================= Header Filter Dropdown ================= */
+
+#frm_fly .dropdown .dropdown-menu,
 #header .dropdown .dropdown-menu{
 	border-radius: 0 var(--border_radius_10) var(--border_radius_10) var(--border_radius_10);
 	border-color: var(--border_color);
 	padding: 0px;
 	box-shadow: 0px 4px 10px var(--box_shadow_color);
 }
+#frm_fly .dropdown .dropdown-menu{
+	width: 100%;
+	border-radius: 0 0 var(--border_radius_10) var(--border_radius_10);
+}
+#frm_fly .dropdown .dropdown-menu li .dropdown-item,
 #header .dropdown .dropdown-menu li .dropdown-item{
 	padding: 15px 30px;
 	color: var(--body_text_color);
@@ -478,18 +514,26 @@ body.login .form-text a{
 	font-size: var(--font_size_15);
 	font-weight: var(--font_weight_500);
 }
+#frm_fly .dropdown .dropdown-menu li .dropdown-item.active,
+#frm_fly .dropdown .dropdown-menu li .dropdown-item:active,
 #header .dropdown .dropdown-menu li .dropdown-item.active,
 #header .dropdown .dropdown-menu li .dropdown-item:active{
 	color: var(--white);
 	background-color: var(--blue_flycode);
 }
+#frm_fly .dropdown .dropdown-menu li:first-child .dropdown-item,
 #header .dropdown .dropdown-menu li:first-child .dropdown-item{
 	border-radius: 0 var(--border_radius_6) 0 0;
 }
+#frm_fly .dropdown .dropdown-menu li:first-child .dropdown-item{
+	border-radius: 0 0 0 0;
+}
+#frm_fly .dropdown .dropdown-menu li:last-child .dropdown-item,
 #header .dropdown .dropdown-menu li:last-child .dropdown-item{
 	border-bottom: none;
 	border-radius: 0 0 var(--border_radius_6) var(--border_radius_6);
 }
+#frm_fly .btn-group .btn-outline-success,
 #header .btn-group .btn-outline-success{
 	--bs-btn-border-color: var(--border_color);
 	--bs-btn-color: var(--body_text_color);
@@ -497,6 +541,10 @@ body.login .form-text a{
 	font-weight: var(--font_weight_500);
 	line-height: 37px;
 }
+#frm_fly .btn-group .btn-outline-success.dropdown-toggle.show,
+#frm_fly .btn-group .btn-outline-success:active,
+#frm_fly .btn-group .btn-outline-success:hover,
+#frm_fly .btn-group .btn-outline-success.active,
 #header .btn-group .btn-outline-success.dropdown-toggle.show,
 #header .btn-group .btn-outline-success:active,
 #header .btn-group .btn-outline-success:hover,
@@ -634,20 +682,20 @@ body.login .form-text a{
 /* ================= Filtre Formu ================= */
 
 /* ================= Nice Select ================= */
-.nice_select_dark{
-	background-color: var(--body_text_color);
-	color: var(--white);
-	border-color: var(--body_text_color);
-	border-radius: var(--border_radius_7);
-	height: 48px;
-	line-height: 48px;
-	font-style: italic;
-	font-size: var(--font_size_18);
-	background-image: url('../../images/icons/search_white.svg');
-	background-repeat: no-repeat;
-	background-position: 33px center;
-	padding-left: 63px;
-	float: none;
+.nice_select_dark {
+    background-color: var(--body_text_color);
+    color: var(--white);
+    border-color: var(--body_text_color);
+    border-radius: var(--border_radius_7);
+    height: 48px;
+    line-height: 48px;
+    font-style: italic;
+    font-size: var(--font_size_18);
+    background-image: url('../../images/icons/units.svg');
+    background-repeat: no-repeat;
+    background-position: 33px center;
+    padding-left: 63px;
+    float: none;
 }
 .nice_select_dark:hover,
 .nice_select_dark:active,
@@ -750,6 +798,9 @@ body.login .form-text a{
 	color: var(--gray_2);
 	min-height: 100%;
 }
+.fly_card.reset_height{
+	min-height: auto;
+}
 .fly_card.update_form{
 	border-color: var(--green_flycode);
 }
@@ -776,6 +827,11 @@ body.login .form-text a{
 	font-size: var(--font_size_15);
 	margin-bottom: 0px;
 }
+.fly_card h6.card-title{
+	font-size: var(--font_size_18);
+	color: var(--gray_13);
+
+}
 .fly_card h6.card-subtitle{
 	font-size: var(--font_size_10);
 }
@@ -786,6 +842,12 @@ body.login .form-text a{
 	margin-right: -2rem;
 	border-color: var(--gray_4);
 	opacity: 1;
+}
+.fly_card hr.small{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: -1rem;
+	margin-right: -1rem;
 }
 .fly_card .fly_card .card-body{
 	padding: 17px;
@@ -1077,9 +1139,27 @@ table.fly_static_table.table>:not(caption)>*>* {
     letter-spacing: 0.26px;
     font-family: var(--font_poppins_semi_bold);
 }
+
+#frm_fly .input-group-sm>.form-control,
+#frm_fly .input-group-sm>.form-select{
+    font-size: var(--font_size_12);
+}
+#frm_fly .input-group-sm>.input-group-text{
+    font-size: var(--font_size_12);
+    letter-spacing: 0.13px;
+    font-family: var(--font_poppins_semi_bold);
+}
+
+#frm_fly .input_group_light>.input-group-text{
+	font-family: var(--font_poppins_regular);
+	background-color: transparent;
+}
 /* ================= Form İçindeki Input Group'ları ================= */
 
 /* ================= Form İçindeki Tarih Input Container'ı ================= */
+#frm_fly .fly_date_input_group{
+	position: relative;
+}
 #frm_fly .fly_date_input_group:before{
 	display: block;
     content: '';
@@ -1156,6 +1236,57 @@ table.fly_static_table.table>:not(caption)>*>* {
 }
 /* ================= Form İçindeki Tarih Container ================= */
 
+/* ================= Form İçindeki List Group ================= */
+#frm_fly .list-group {
+    --bs-list-group-color: var(--gray_9);
+    --bs-list-group-bg: var(--bs-body-bg);
+    --bs-list-group-border-color: var(--border_color);
+    --bs-list-group-border-width: var(--bs-border-width);
+    --bs-list-group-border-radius: var(--bs-border-radius);
+    --bs-list-group-item-padding-x: 1rem;
+    --bs-list-group-item-padding-y: 0.5rem;
+    --bs-list-group-action-color: var(--bs-secondary-color);
+    --bs-list-group-action-hover-color: var(--white);
+    --bs-list-group-action-hover-bg: #0000FE80;
+    --bs-list-group-action-active-color: var(--white);
+    --bs-list-group-action-active-bg: #0000FE80;
+    --bs-list-group-disabled-color: var(--bs-secondary-color);
+    --bs-list-group-disabled-bg: var(--bs-body-bg);
+    --bs-list-group-active-color: var(--white);
+    --bs-list-group-active-bg: #0000FE80;
+    --bs-list-group-active-border-color: var(--border_color);
+    border-radius: var(--border_radius_7);
+    font-size: var(--font_size_16);
+    letter-spacing: 0.64px;
+    font-family: var(--font_poppins_semi_bold);
+}
+#frm_fly .empty_list_group{
+	border: 1px solid var(--border_color);
+    background-color: var(--white);
+}
+/* ================= Form İçindeki List Group ================= */
+
+/* ================= Form İçindeki Time ================= */
+#frm_fly .time{
+	position: relative;
+}
+#frm_fly .time:before{
+	display: block;
+	content: '';
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-image: url(../../images/icons/clock.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	z-index: 1;
+	width: 12px;
+	height: 12px;
+}
+/* ================= Form İçindeki Time ================= */
+
+
 /* ================= Sweet Alert Overwrite ================= */
 .swal2-backdrop-show{
 	background-color: #00000080 !important;
@@ -1198,37 +1329,33 @@ table.fly_static_table.table>:not(caption)>*>* {
 	background-color: var(--blue_flycode) !important;
 }
 /* ================= Sweet Alert Overwrite ================= */
-
-
-
-
-#frm_fly .list-group {
-    --bs-list-group-color: var(--gray_9);
-    --bs-list-group-bg: var(--bs-body-bg);
-    --bs-list-group-border-color: var(--border_color);
-    --bs-list-group-border-width: var(--bs-border-width);
-    --bs-list-group-border-radius: var(--bs-border-radius);
-    --bs-list-group-item-padding-x: 1rem;
-    --bs-list-group-item-padding-y: 0.5rem;
-    --bs-list-group-action-color: var(--bs-secondary-color);
-    --bs-list-group-action-hover-color: var(--white);
-    --bs-list-group-action-hover-bg: #0000FE80;
-    --bs-list-group-action-active-color: var(--white);
-    --bs-list-group-action-active-bg: #0000FE80;
-    --bs-list-group-disabled-color: var(--bs-secondary-color);
-    --bs-list-group-disabled-bg: var(--bs-body-bg);
-    --bs-list-group-active-color: var(--white);
-    --bs-list-group-active-bg: #0000FE80;
-    --bs-list-group-active-border-color: var(--border_color);
-    border-radius: var(--border_radius_7);
-    font-size: var(--font_size_16);
-    letter-spacing: 0.64px;
-    font-family: var(--font_poppins_semi_bold);
+#fazla_mesai_tablosu.table{
+	--bs-table-color: var(--body_text_color);
+	font-family: var(--font_poppins_regular);
+	font-size: var(--font_size_12);
 }
-
-#frm_fly .empty_list_group{
-	border: 1px solid var(--border_color);
-    background-color: var(--white);
+#fazla_mesai_tablosu thead tr th{
+	font-size: var(--font_size_13);
+	font-family: var(--font_poppins_medium);
+	letter-spacing: 0.26px;
+}
+#fazla_mesai_tablosu tbody tr th{
+	font-size: var(--font_size_12);
+	font-family: var(--font_poppins_regular);
+	letter-spacing: 0.24px;
+}
+#fazla_mesai_tablosu .btn_fly{
+	line-height: 23px;
+}
+#fazla_mesai_tablosu .input-group-text{
+	background-color: transparent;
+	font-size: var(--font_size_12) !important;
+	font-family: var(--font_poppins_regular) !important;
+	letter-spacing: 0;
+	min-width: 58px;
+}
+#fazla_mesai_tablosu .time:before{
+	background-image: none;
 }
 
 

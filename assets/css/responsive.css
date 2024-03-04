@@ -1,4 +1,14 @@
 /*------------ XXL ------------*/
+@media (max-width: 1530px){
+	.time:before{
+		background-image: none !important;
+	}
+}
+@media (max-width: 1399px){
+	.time:before{
+		background-image: url(../../images/icons/clock.svg) !important;
+	}
+}
 @media (max-width: 1374px){
 	.user_card .card-body{
 		width: 100px !important;
